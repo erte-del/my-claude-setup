@@ -43,6 +43,7 @@ A snapshot of my Claude (desktop app + Claude Code) setup: plugins, skills, MCP 
 | [Claude-Mem](https://github.com/thedotmack/claude-mem) | Persistent cross-session memory, search, plan/do/babysit skills | `/plugin marketplace add thedotmack/claude-mem` then `/plugin install claude-mem@thedotmack` |
 | [Impeccable](https://github.com/pbakaus/impeccable) | Design-quality workflow and agents | `/plugin marketplace add pbakaus/impeccable`, `/plugin install impeccable@impeccable`, then `/impeccable init` |
 | [TDD Guard](https://github.com/nizos/tdd-guard) | Enforces test-driven development via hooks | `/plugin marketplace add nizos/tdd-guard` then `/plugin install tdd-guard@tdd-guard` |
+| [Clawd Spinner](https://github.com/saiharsha03/clawd-spinner) | Custom spinner for Claude Code | `/plugin marketplace add saiharsha03/clawd-spinner` then `/plugin install clawd-spinner@clawd-spinner` |
 | [Obsidian Skills](https://github.com/kepano/obsidian-skills) | Obsidian markdown, Bases, canvas, CLI skills | `/plugin marketplace add kepano/obsidian-skills` then `/plugin install obsidian@obsidian-skills` |
 
 ### Synced from claude.ai account
@@ -74,7 +75,7 @@ Built-in/bundled skills I also use: document and file tools (docx, pptx, xlsx, p
 | [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) | `claude mcp add chrome-devtools -s user -- npx -y chrome-devtools-mcp@latest` |
 | [Firecrawl](https://github.com/firecrawl/firecrawl-mcp-server) (planned, needs API key) | `claude mcp add firecrawl -e FIRECRAWL_API_KEY=<your-key> -- npx -y firecrawl-mcp` |
 
-Plugin-provided servers: Claude-Mem search, Context7, Playwright, Serena.
+Plugin-provided servers: Claude-Mem search, Context7, Playwright, Serena, GitKraken, GitHub.
 
 ## claude.ai connectors
 
@@ -82,17 +83,25 @@ Gmail, Google Calendar, Google Drive, Slack, GitHub, Vercel, Supabase, Figma, Ca
 
 ## Mods
 
-- **model-router** (local mod): a hook-based mod that picks Haiku, Sonnet, or Opus per message based on the prompt.
+From my [claude-mods](https://github.com/erte-del/claude-mods) marketplace: `/plugin marketplace add erte-del/claude-mods`, then install any of these.
+
+| Mod | What it does |
+|---|---|
+| `sidebar` | Live sidebar: model badge, context gauge, cost, usage dial, New chat / Commit & Push / Handoff buttons |
+| `commit-push` | One-click stage, commit (Claude-written message) and push |
+| `handoff` | One-click `handoff.md`, clear, and continue |
+| `repo` | Pick a GitHub repo, clone if needed, move the session into it |
+| `restart-ultron-backend` | Restart-backend button, active only in `ULTRON_cBrain` |
 
 ## Settings
 
 ```jsonc
 // ~/.claude/settings.json (generalized)
 {
-  "model": "opus",
   "theme": "dark",
+  "statusLine": { "type": "command", "command": "ccstatusline" },  // npm i -g ccstatusline
   "enabledPlugins": { /* every plugin above is enabled */ },
-  "extraKnownMarketplaces": { /* ponytail, plus local mod marketplace */ }
+  "extraKnownMarketplaces": { /* claude-mods, clawd-spinner, ponytail, claude-mem, impeccable, tdd-guard, obsidian-skills */ }
 }
 ```
 
