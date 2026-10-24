@@ -107,6 +107,10 @@ From my [claude-mods](https://github.com/erte-del/claude-mods) marketplace: `/pl
 
 Global `CLAUDE.md` is minimal: it just routes `/graphify` to the Graphify skill.
 
+## Status line
+
+`ccstatusline` layout lives in [`ccstatusline/settings.json`](ccstatusline/settings.json). Install with `npm i -g ccstatusline`, then copy it to `~/.config/ccstatusline/settings.json` (back up any existing one first). Two powerline lines: model, thinking effort, session usage, free memory / session name, repo, branch, speed.
+
 ## Workflow notes
 
 - Persistent memory via Claude-Mem plus file-based memory.

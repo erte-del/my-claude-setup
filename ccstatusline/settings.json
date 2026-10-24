@@ -1,0 +1,89 @@
+{
+  "version": 4,
+  "lines": [
+    [
+      {
+        "id": "4595c12e-092a-4a19-8629-6f7ce5dc654f",
+        "type": "model",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:141"
+      },
+      {
+        "id": "f6d42123-e832-4b7e-80d5-744e753ede33",
+        "type": "thinking-effort",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:253"
+      },
+      {
+        "id": "53947b2c-5e27-4dc7-9d1d-56d7c799bbfd",
+        "type": "session-usage",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:204"
+      },
+      {
+        "id": "eac8c387-bea1-49d6-abf6-6966354c49e3",
+        "type": "free-memory",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:117"
+      }
+    ],
+    [
+      {
+        "id": "11997032-5e9d-4ce5-8f9f-0753dbb0ab56",
+        "type": "session-name",
+        "color": "ansi256:231",
+        "backgroundColor": "ansi256:236"
+      },
+      {
+        "id": "287e1d43-671d-4a1d-a32e-82565737310f",
+        "type": "git-origin-owner-repo",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:141"
+      },
+      {
+        "id": "4354fbd2-abca-4c9d-894f-cf66ccdf7e5d",
+        "type": "git-branch",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:253"
+      },
+      {
+        "id": "97e61df0-2a08-43c3-a665-adcb1a9b602f",
+        "type": "total-speed",
+        "color": "ansi256:235",
+        "backgroundColor": "ansi256:204"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "defaultPadding": " ",
+  "defaultPaddingSide": "both",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "terminalWidthCacheTtlSeconds": 5,
+  "customCommandCacheTtlSeconds": 0,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": true,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [
+      ""
+    ],
+    "theme": "custom",
+    "autoAlign": true,
+    "continueThemeAcrossLines": true
+  },
+  "installation": {
+    "method": "pinned",
+    "installedVersion": "2.2.32"
+  }
+}
