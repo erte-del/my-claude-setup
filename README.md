@@ -87,7 +87,7 @@ From my [claude-mods](https://github.com/erte-del/claude-mods) marketplace: `/pl
 
 | Mod | What it does |
 |---|---|
-| `sidebar` | Live sidebar: model badge, context gauge, cost, usage dial, New chat / Commit & Push / Handoff buttons |
+| `sidebar` | Live sidebar with two tabs. Overview: model badge, context gauge, cost, usage dial, New chat / Commit & Push / Handoff buttons. Usage: lifetime tokens and cost, split into input and output, drawn as Claude dropping gold coins (animated while a reply runs) into IN and OUT tubes. Totals persist in `~/.claude/sidebar-lifetime.json` and were seeded from past session transcripts |
 | `commit-push` | One-click stage, commit (Claude-written message) and push |
 | `handoff` | One-click `handoff.md`, clear, and continue |
 | `repo` | Pick a GitHub repo, clone if needed, move the session into it |
