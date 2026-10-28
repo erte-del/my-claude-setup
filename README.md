@@ -60,6 +60,13 @@ A snapshot of my Claude (desktop app + Claude Code) setup: plugins, skills, MCP 
 | [Agent Skills](https://github.com/addyosmani/agent-skills) | Engineering workflow skills | `npx skills add addyosmani/agent-skills` |
 | [Find Skills](https://github.com/vercel-labs/skills) | Search the skills ecosystem | `npx skills find <topic>` |
 
+Installed skills by pack (all land in `~/.claude/skills`):
+
+- `emilkowalski/skills` (15): animate, animate-expo, animation-performance, animation-vocabulary, apple-design, ask-sonner, break-ui, emil-design-eng, find-animation-opportunities, improve-animations, mobile-native, pick-ui-library, prototype, review-animations, write-swift
+- `addyosmani/agent-skills` (25): api-and-interface-design, browser-testing-with-devtools, ci-cd-and-automation, code-review-and-quality, code-simplification, constraint-driven-development, context-engineering, debugging-and-error-recovery, deprecation-and-migration, documentation-and-adrs, doubt-driven-development, frontend-ui-engineering, git-workflow-and-versioning, idea-refine, incremental-implementation, interview-me, observability-and-instrumentation, performance-optimization, planning-and-task-breakdown, security-and-hardening, shipping-and-launch, source-driven-development, spec-driven-development, test-driven-development, using-agent-skills
+- Graphify (`graphify`), see above
+- `audit`, my own skill: `/audit <idea>` runs a 3-agent debate (Sonnet advocate, Sonnet skeptic, Opus judge). Source in [`skills/audit/SKILL.md`](skills/audit/SKILL.md); copy it to `~/.claude/skills/audit/`
+
 Built-in/bundled skills I also use: document and file tools (docx, pptx, xlsx, pdf), canvas design, scheduling, browser and computer-use guides, `loop`, `simplify`, `security-review`, `claude-api`, and Artifact design/capabilities/diagramming/dataviz skills.
 
 ## CLI tools
@@ -93,17 +100,31 @@ From my [claude-mods](https://github.com/erte-del/claude-mods) marketplace: `/pl
 | `repo` | Pick a GitHub repo, clone if needed, move the session into it |
 | `restart-ultron-backend` | Restart-backend button, active only in `ULTRON_cBrain` |
 
+### Local mod: model-router
+
+Not in the claude-mods marketplace. It picks Haiku, Sonnet or Opus 5.5 per message with a one-word Haiku call, and `!haiku`, `!sonnet` or `!opus` at the start of a prompt forces a model. Source is in [`mods/model-router`](mods/model-router). Install:
+
+```
+mkdir -p ~/.claude/mods && cp -R mods/model-router ~/.claude/mods/
+/plugin marketplace add ~/.claude/mods/model-router
+/plugin install model-router@model-router
+```
+
 ## Settings
 
 ```jsonc
 // ~/.claude/settings.json (generalized)
 {
   "theme": "dark",
+  "model": "opus",
+  "modelSettings": { "claude-opus-5-5": { "effortLevel": "medium" } },
   "statusLine": { "type": "command", "command": "ccstatusline" },  // npm i -g ccstatusline
   "enabledPlugins": { /* every plugin above is enabled */ },
-  "extraKnownMarketplaces": { /* claude-mods, clawd-spinner, ponytail, claude-mem, impeccable, tdd-guard, obsidian-skills */ }
+  "extraKnownMarketplaces": { /* claude-mods, clawd-spinner, ponytail, claude-mem, impeccable, tdd-guard, obsidian-skills, model-router (local directory) */ }
 }
 ```
+
+Notes: `tdd-guard` is installed but turned off. In `~/.claude.json`, `autoUpdates` is `false` (update by hand). `settings.json` also has an `autoMode` block (environment notes and soft-deny rules for auto mode) that is specific to my projects, so it isn't copied here.
 
 Global `CLAUDE.md` is minimal: it just routes `/graphify` to the Graphify skill.
 
